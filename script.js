@@ -1,4 +1,10 @@
-// script.js
+const toggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+toggle.addEventListener('click', () => {
+  body.classList.toggle('dark');
+  toggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+});
 
 // Seleciona todos os cards de cursos e o modal
 const courseCards = document.querySelectorAll(".project-card");
