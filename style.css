@@ -1,4 +1,3 @@
-/* ===== VARIÁVEIS DE TEMA PADRÃO ===== */
 :root {
   --bg-color: #f5f5f5; /* Cor de fundo padrão (modo claro) */
   --text-color: #333; /* Cor principal do texto */
@@ -10,11 +9,18 @@
 
 /* ===== VARIÁVEIS PARA O MODO ESCURO ===== */
 body.dark {
+   --header-bg: rgba(255, 255, 255, 0.7);
   --bg-color: #121212;
   --text-color: #e0e0e0;
   --card-bg: #1e1e1e;
   --accent-color: #6366f1;
   --button-hover: #818cf8;
+}
+
+body.dark .card {
+  --header-bg: rgba(18, 18, 18, 0.75);
+  background: rgba(20, 20, 20, 0.78);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
 /* ===== RESET DE ESTILOS ===== */
@@ -45,9 +51,10 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 24px 32px;
-  background-color: var(--card-bg);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  position: sticky; /* Fixa no topo ao rolar */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+
+
   top: 0;
   z-index: 10;
 }
@@ -82,12 +89,17 @@ a {
 
 /* ===== ESTILO DOS CARDS ===== */
 .card {
-  background-color: var(--card-bg);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 24px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   transition: transform var(--transition), box-shadow var(--transition);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
+
 
 .card:hover {
   transform: translateY(-5px);
@@ -296,3 +308,28 @@ a {
   color: #4a51ad;
   margin-top: 5px;
 }
+
+
+
+
+/* ===== ANIMAÇÃO NO SCROLL ===== */
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* FUNDO*/
+#particles-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+
