@@ -1,13 +1,13 @@
 :root {
-  --bg-color: #f5f5f5; /* Cor de fundo padrão (modo claro) */
-  --text-color: #333; /* Cor principal do texto */
-  --card-bg: #fff; /* Fundo dos cards e containers */
-  --accent-color: #4f46e5; /* Cor de destaque (botões, títulos etc.) */
-  --button-hover: #3730a3; /* Cor ao passar o mouse em botões */
-  --transition: 0.3s ease; /* Transição suave padrão */
+  --bg-color: #f5f5f5; 
+  --text-color: #333; 
+  --card-bg: #fff;
+  --accent-color: #4f46e5;
+  --button-hover: #3730a3; 
+  --transition: 0.3s ease; 
 }
 
-/* ===== VARIÁVEIS PARA O MODO ESCURO ===== */
+
 body.dark {
    --header-bg: rgba(255, 255, 255, 0.7);
   --bg-color: #121212;
@@ -23,29 +23,27 @@ body.dark .card {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
-/* ===== RESET DE ESTILOS ===== */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Inclui borda e padding no cálculo total */
+  box-sizing: border-box; 
 }
 
-/* ===== ESTILOS GERAIS DO BODY ===== */
 body {
-  font-family: 'Inter', sans-serif; /* Fonte principal */
+  font-family: 'Inter', sans-serif; 
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color var(--transition), color var(--transition);
-  line-height: 1.6; /* Espaçamento entre linhas */
+  line-height: 1.6; 
 }
 
-/* Remove sublinhado e herda cor dos links */
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ===== CABEÇALHO ===== */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -64,7 +62,6 @@ a {
   color: var(--accent-color);
 }
 
-/* Botão de alternar tema (claro/escuro) */
 #theme-toggle {
   background: none;
   border: none;
@@ -74,20 +71,18 @@ a {
 }
 
 #theme-toggle:hover {
-  transform: rotate(20deg); /* Efeito ao passar o mouse */
+  transform: rotate(20deg);
 }
 
-/* ===== CONTEÚDO PRINCIPAL ===== */
 .main-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
   padding: 32px;
   max-width: 1200px;
-  margin: 0 auto; /* Centraliza o conteúdo */
+  margin: 0 auto; 
 }
 
-/* ===== ESTILO DOS CARDS ===== */
 .card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
@@ -123,15 +118,15 @@ a {
   font-size: 16px;
 }
 
-/* ===== GRELHA DE PROJETOS E CURSOS ===== */
+
 .projects-grid,
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   gap: 32px;
 }
 
-/* ===== CARD DE PROJETO ===== */
+
 .project-card {
   background-color: var(--card-bg);
   border-radius: 10px;
@@ -159,7 +154,6 @@ a {
   transform: scale(1.03); /* Efeito de zoom no hover */
 }
 
-/* Informações do projeto */
 .project-info {
   padding: 16px;
   background-color: var(--card-bg);
@@ -170,7 +164,7 @@ a {
   color: var(--accent-color);
 }
 
-/* ===== RODAPÉ ===== */
+
 .footer {
   text-align: center;
   padding: 24px;
@@ -180,7 +174,6 @@ a {
   color: var(--text-color);
 }
 
-/* ===== SEÇÃO DE PERFIL ===== */
 .perfil-container {
   display: flex;
   align-items: center;
@@ -204,7 +197,6 @@ a {
   margin-top: 5px;
 }
 
-/* ===== ÍCONES DE CONTATO / REDE SOCIAL ===== */
 .container {
   display: flex;
   justify-content: center;
@@ -222,12 +214,11 @@ a {
   transform: scale(1.1);
 }
 
-/* ===== SEÇÃO FIGMA ===== */
 .projects-grid img {
   width: 100%;
   height: auto;
   max-height: 200px;
-  object-fit: contain; /* Evita distorção das imagens */
+  object-fit: contain; 
   display: block;
   margin: 0 auto;
   background-color: var(--card-bg);
@@ -238,7 +229,6 @@ a {
   margin-bottom: 10px;
 }
 
-/* Links dos cards de projeto */
 .project-card a {
   display: block;
   height: 100%;
@@ -248,7 +238,6 @@ a {
   text-decoration: underline;
 }
 
-/* ===== MODAL DE VISUALIZAÇÃO DE IMAGEM ===== */
 .modal {
   display: none;
   position: fixed;
@@ -263,7 +252,6 @@ a {
   align-items: center;
 }
 
-/* Conteúdo do modal (imagem) */
 .modal-content {
   background-color: var(--card-bg);
   padding: 16px;
@@ -282,7 +270,6 @@ a {
   border-radius: 8px;
 }
 
-/* Botão de fechar o modal */
 #close-modal {
   position: absolute;
   top: 10px;
@@ -297,22 +284,16 @@ a {
   color: var(--accent-color);
 }
 
-/* Exibe o modal */
 .modal.show {
   display: flex;
 }
 
-/* Texto descritivo abaixo dos projetos */
 .project-card p {
   font-size: 14px;
   color: #4a51ad;
   margin-top: 5px;
 }
 
-
-
-
-/* ===== ANIMAÇÃO NO SCROLL ===== */
 .fade-scroll {
   opacity: 0;
   transform: translateY(40px);
@@ -325,7 +306,7 @@ a {
 }
 
 
-/* FUNDO*/
+
 #particles-bg {
   position: fixed;
   inset: 0;
